@@ -16,7 +16,7 @@ function Home() {
         <CardColumns>
           {
               sections.map(el=> (
-               <Link href={el.id}>
+               <a href={el.id} style={{ color: 'unset' }}>
                 <Card style={{ height: '214px', cursor: 'pointer' }}>
                   <Card.Body>
                     {
@@ -30,7 +30,7 @@ function Home() {
                     </Card.Text>
                   </Card.Body>
                 </Card>
-                </Link>
+                </a>
               ))
             }
         </CardColumns>
