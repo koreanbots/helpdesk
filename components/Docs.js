@@ -20,6 +20,10 @@ export default function Docs({ path }) {
             {
             loading ? (
                 <div className="text-center">
+                    <Head>
+                        <title>한국 디스코드봇 리스트</title>
+                        <meta name="description" content="도움이 필요하신가요?" />
+                    </Head>
                     <div className="spinner-border m-5" role="status">
                         <span className="sr-only">Loading...</span>
                     </div>
