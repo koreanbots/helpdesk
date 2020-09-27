@@ -1,65 +1,42 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { Card, CardColumns, CardDeck, Container, Image, Jumbotron } from 'react-bootstrap'
+import Layout from '../components/Layout'
 
-export default function Home() {
+const sections = [ { id: 'announcement', name: '공지사항', desc: '아아!! 알립니다! 공지사항들입니다.', img: '/speaker.svg' }, { id: 'bots', name: '한국 디스코드봇 리스트', desc: '"국내 디스코드 봇을 한 곳에서." 한국 디스코드봇 리스트를 소개합니다.', img: '/koreanbots.png' }, { id: 'community', name: '커뮤니티', desc: '파트너, 인증 등과 같은 커뮤니티 프로그램들을 소개합니다!', img: '/partner.png' } ]
+function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Layout>
+      <Jumbotron align="center">
+          <h1 className="header">
+            도움이 필요하신가요?
+          </h1>
+        </Jumbotron>
+      <Container align="center">
+        <CardColumns>
+          {
+              sections.map(el=> (
+               <Link href={el.id}>
+                <Card style={{ height: '214px', cursor: 'pointer' }}>
+                  <Card.Body>
+                    {
+                      el.img && (
+                        <Image src={el.img} style={{ height: '90px' }}/>
+                      )
+                    }
+                    <Card.Title style={{ color: "#36f" }}>{el.name}</Card.Title>
+                    <Card.Text>
+                      {el.desc}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                </Link>
+              ))
+            }
+        </CardColumns>
+      </Container>
+    </Layout>
   )
 }
+
+export default Home
