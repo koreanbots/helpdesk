@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
+
 import { Card, CardColumns, CardDeck, Container, Image, Jumbotron } from 'react-bootstrap'
 import Layout from '../components/Layout'
 
@@ -7,6 +7,10 @@ const sections = [ { id: 'announcement', name: '공지사항', desc: '아아!! �
 function Home() {
   return (
     <Layout>
+      <Head>
+        <title>한국 디스코드봇 리스트</title>
+        <meta name="description" content="도움이 필요하신가요?" />
+      </Head>
       <Jumbotron align="center">
           <h1 className="header">
             도움이 필요하신가요?
