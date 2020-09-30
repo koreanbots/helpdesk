@@ -42,10 +42,16 @@ export default function Docs({ path }) {
                 </div>
             )
         }
-        <div style={{ padding: '5em 0', textAlign: 'center' }}>
-            <h3>잘못된 내용이 있나요?</h3>
-            <Button variant="dark" href={`https://github.com/koreanbots/docs/edit/master/${path}`}>수정하기</Button>
-        </div>
+        <Container style={{ padding: '5em 0', textAlign: 'center' }}>
+            <h2 />
+            <h3 style={{ marginTop: '20px' }}>도움이 되셨나요?</h3>
+
+            <h5>도움이 필요하시다면 <a href="https://discord.com/invite/JEh53MQ">공식 디스코드 서버</a>에서 도와드리겠습니다.</h5>
+
+            <p>
+            문서에 잘못된 내용이 있나요? <a href={`https://github.com/koreanbots/docs/edit/master/${path}`}>수정하기</a>
+            </p>
+        </Container>
         </Layout>
     )
 }
