@@ -34,7 +34,7 @@ export default function Docs({ path }) {
                         <title>{document.split('\n')[0].replace(/^# /, '') || '한국 디스코드봇 리스트'}</title>
                         <meta name="description" content="도움이 필요하신가요?" />
                     </Head>
-                    <MarkdownView markdown={document} />
+                    <MarkdownView markdown={document} components={{ Danger, Success }}/>
                 </Container>
             ) : (
                 <div className="text-center">
@@ -53,5 +53,17 @@ export default function Docs({ path }) {
             </p>
         </Container>
         </Layout>
+    )
+}
+
+function Success({ children }) {
+    return (
+        <div className="alert alert-success">{children}</div>
+    )
+}
+
+function Danger({ children }) {
+    return (
+        <div className="alert alert-danger">{children}</div>
     )
 }
