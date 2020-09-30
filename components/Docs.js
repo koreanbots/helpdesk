@@ -34,6 +34,7 @@ export default function Docs({ path }) {
                         <title>{document.split('\n')[0].replace(/^# /, '') || '한국 디스코드봇 리스트'}</title>
                         <meta name="description" content="도움이 필요하신가요?" />
                     </Head>
+                    <a href="./">← 상위 문서로 이동</a>
                     <MarkdownView markdown={document} components={{ Danger, Success }}/>
                 </Container>
             ) : (
@@ -42,7 +43,7 @@ export default function Docs({ path }) {
                 </div>
             )
         }
-        <Container style={{ padding: '5em 0', textAlign: 'center' }}>
+        <Container style={{ textAlign: 'center' }}>
             <h2 />
             <h3 style={{ marginTop: '20px' }}>도움이 되셨나요?</h3>
 
