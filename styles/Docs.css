@@ -1,0 +1,25 @@
+h1 {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #36f;
+    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+h2::after {
+    background-color: #36f;
+    content: "";
+    height: 2px;
+    flex: 1 1 auto;
+    opacity: .6;
+    margin-left: 10px;
+}
+
+img {
+    max-width: 100%;
+}

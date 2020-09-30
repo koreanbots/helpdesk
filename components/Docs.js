@@ -1,6 +1,6 @@
 import Head from "next/head"
 import { useEffect, useState } from "react"
-import { Container } from "react-bootstrap"
+import { Button, Container, Jumbotron } from "react-bootstrap"
 import MarkdownView from 'react-showdown'
 import Layout from "./Layout"
 
@@ -42,6 +42,10 @@ export default function Docs({ path }) {
                 </div>
             )
         }
+        <div style={{ padding: '5em 0', textAlign: 'center' }}>
+            <h3>잘못된 내용이 있나요?</h3>
+            <Button variant="dark" href={`https://github.com/koreanbots/docs/edit/master/${path}`}>수정하기</Button>
+        </div>
         </Layout>
     )
 }

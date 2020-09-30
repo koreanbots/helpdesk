@@ -1,15 +1,12 @@
 import Docs from "../../../components/Docs";
-
-import { useRouter } from 'next/router'
-
 function Document({ path, gg }) {
     console.log(gg)
     return (
-        <Docs path={path + '/README.md'}/>
+        <Docs path={path+'.md'}/>
     )
 }
 
 Document.getInitialProps = function({ query }) {
-    return { path: query.section + '/' + query.subsection, gg: query.Docs }
+    return { path: query.section + '/' + query.subsection + '/' + query.docs.join('/'), gg: query.Docs }
 }
 export default Document
