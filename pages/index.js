@@ -21,7 +21,7 @@ function Home() {
           {
               sections.map(el=> (
                <a href={el.id} style={{ color: 'unset' }}>
-                <Card style={{ height: '214px', cursor: 'pointer' }}>
+                <Card style={{ minHeight: '214px', cursor: 'pointer' }}>
                   <Card.Body>
                     {
                       el.img && (
